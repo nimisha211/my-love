@@ -1,0 +1,557 @@
+Nimisha, [07-02-2026 22:25]
+YESS 😭💖
+The code I gave already has design, but I got you — here’s an even more aesthetic + “designed” version with:
+✅ Modern romantic UI
+✅ Better spacing + fonts
+✅ Beautiful timeline line
+✅ Photo section
+✅ Smooth animations
+✅ “Click for surprise” popup
+✅ Fully mobile responsive
+Just copy-paste into index.html 👇
+Copy code
+Html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story ❤️</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --pink:#ff3d7f;
+      --pink2:#ff74a6;
+      --dark:#1d1d1f;
+      --muted:#666;
+      --card:rgba(255,255,255,0.78);
+      --glass: blur(12px);
+      --shadow: 0 18px 40px rgba(0,0,0,0.08);
+      --radius: 26px;
+    }
+
+    *{ margin:0; padding:0; box-sizing:border-box; }
+
+    body{
+      font-family: "Poppins", sans-serif;
+      color: var(--dark);
+      background: radial-gradient(circle at top left, #ffe3ef 0%, transparent 50%),
+                  radial-gradient(circle at bottom right, #e9e2ff 0%, transparent 55%),
+                  linear-gradient(135deg, #fff6fb, #f7f4ff);
+      overflow-x:hidden;
+    }
+
+    /* Smooth scrolling */
+    html{ scroll-behavior:smooth; }
+
+    /* ========== HERO ========== */
+    header{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 28px;
+      position:relative;
+    }
+
+    .hero{
+      width:min(980px, 100%);
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 50px 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: var(--glass);
+      border: 1px solid rgba(255,255,255,0.65);
+      text-align:center;
+      animation: fadeIn 1.2s ease;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:-80px;
+      background: radial-gradient(circle, rgba(255,61,127,0.15), transparent 60%);
+      transform: rotate(20deg);
+    }
+
+    .hero-content{ position:relative; z-index:2; }
+
+    h1{
+      font-family:"Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 10px;
+      letter-spacing: 0.2px;
+    }
+
+    .subtitle{
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      opacity:0.85;
+      max-width: 680px;
+      margin: 0 auto 28px;
+    }
+
+    .btn{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      justify-content:center;
+      padding: 14px 22px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--pink), var(--pink2));
+      color:white;
+      text-decoration:none;
+      font-weight:600;
+      box-shadow: 0 18px 35px rgba(255,61,127,0.25);
+      transition: 0.25s ease;
+    }
+
+    .btn:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 25px 40px rgba(255,61,127,0.3);
+    }
+
+    /* Floating hearts */
+    .heart{
+      position:absolute;
+      font-size: 18px;
+      opacity: 0.55;
+      animation: floatUp 7s infinite ease-in;
+      user-select:none;
+    }
+
+    @keyframes floatUp{
+      0%{ transform: translateY(0) scale(1); opacity:0.55; }
+      100%{ transform: translateY(-105vh) scale(1.5); opacity:0; }
+    }
+
+    /* ========== SECTIONS ========== */
+    section{
+      width:min(1100px, 100%);
+      margin: auto;
+      padding: 70px 22px;
+    }
+
+    .section-title{
+      font-family:"Playfair Display", serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      text-align:center;
+      margin-bottom: 18px;
+    }
+
+    .section-sub{
+      text-align:center;
+      color: var(--muted);
+      max-width: 750px;
+      margin: 0 auto 30px;
+    }
+
+    .card{
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: var(--glass);
+
+Nimisha, [07-02-2026 22:25]
+border: 1px solid rgba(255,255,255,0.6);
+      animation: fadeUp 0.9s ease;
+    }
+
+    /* ========== TIMELINE ========== */
+    .timeline{
+      margin-top: 35px;
+      display:grid;
+      gap: 18px;
+      position:relative;
+    }
+
+    .timeline::before{
+      content:"";
+      position:absolute;
+      left: 18px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(var(--pink), #b48cff);
+      border-radius: 99px;
+      opacity: 0.35;
+    }
+
+    .timeline-item{
+      background: rgba(255,255,255,0.9);
+      border-radius: 22px;
+      padding: 20px 20px 20px 55px;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.06);
+      position:relative;
+      border: 1px solid rgba(0,0,0,0.03);
+      transition: 0.25s ease;
+    }
+
+    .timeline-item:hover{
+      transform: translateY(-3px);
+    }
+
+    .dot{
+      position:absolute;
+      left: 10px;
+      top: 22px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: linear-gradient(90deg, var(--pink), #b48cff);
+      box-shadow: 0 10px 20px rgba(255,61,127,0.2);
+    }
+
+    .timeline-item h3{
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+
+    .timeline-item p{
+      color: #333;
+      opacity: 0.9;
+    }
+
+    /* ========== PHOTO SECTION ========== */
+    .photo-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .photo{
+      border-radius: 24px;
+      overflow:hidden;
+      background: rgba(255,255,255,0.9);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.03);
+      transition: 0.25s ease;
+    }
+
+    .photo:hover{ transform: translateY(-4px); }
+
+    .photo img{
+      width:100%;
+      height: 220px;
+      object-fit: cover;
+      display:block;
+    }
+
+    .photo .caption{
+      padding: 14px 14px 18px;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    /* ========== MEMORIES ========== */
+    .memory-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .memory{
+      background: rgba(255,255,255,0.92);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.03);
+      transition: 0.25s ease;
+    }
+
+    .memory:hover{ transform: translateY(-4px); }
+
+    /* ========== WHY YOU ========== */
+    ul.love-list{
+      list-style:none;
+      display:grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    ul.love-list li{
+      background: rgba(255,255,255,0.92);
+      border-radius: 18px;
+      padding: 14px 16px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+
+    /* ========== FINAL SURPRISE ========== */
+    .center{
+      text-align:center;
+    }
+
+    .surprise-box{
+      display:none;
+      margin-top: 22px;
+      padding: 22px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.95);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.03);
+      animation: fadeUp 0.6s ease;
+    }
+
+    .big-love{
+      font-family:"Playfair Display", serif;
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    footer{
+      text-align:center;
+      padding: 30px 18px;
+      color: #666;
+      opacity: 0.85;
+    }
+
+    /* Animations */
+    @keyframes fadeIn{
+      from{ opacity:0; transform: translateY(14px); }
+      to{ opacity:1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp{
+      from{ opacity:0; transform: translateY(18px); }
+      to{ opacity:1; transform: translateY(0); }
+    }
+
+    /* Small screens */
+    @media (max-width: 500px){
+      .timeline-item{ padding-left: 52px; }
+      .photo img{ height: 200px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Floating hearts -->
+  <div class="heart" style="left:10%; top:98%;">❤️</div>
+  <div class="heart" style="left:22%; top:105%; animation-delay:1s;">💗</div>
+  <div class="heart" style="left:50%; top:102%; animation-delay:2s;">💖</div>
+  <div class="heart" style="left:76%; top:106%; anima
+
+Nimisha, [07-02-2026 22:25]
+tion-delay:0.5s;">💘</div>
+  <div class="heart" style="left:90%; top:101%; animation-delay:1.7s;">💕</div>
+
+  <!-- HERO -->
+  <header>
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Our Story ❤️</h1>
+        <p class="subtitle">
+          Every love story is beautiful… but ours is my favorite.
+          This is a small little page to remind you how special you are to me.
+        </p>
+        <a class="btn" href="#how-we-met">Start the journey ✨</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HOW WE MET -->
+  <section id="how-we-met">
+    <h2 class="section-title">📍 How We Met</h2>
+    <p class="section-sub">
+      The moment you came into my life… it started feeling like home.
+    </p>
+
+    <div class="card">
+      <p>
+        I still remember the day we met.  
+        I didn’t know it then, but that moment was going to become one of the most important parts of my life.
+        <br><br>
+        You came into my world so naturally… and slowly, you became my favorite part of it.
+      </p>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section>
+    <h2 class="section-title">🕰️ Our Journey</h2>
+    <p class="section-sub">
+      Some moments are small… but they stay in your heart forever.
+    </p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="dot"></span>
+        <h3>🌸 The Beginning</h3>
+        <p>
+          The first time we talked properly… something felt different.
+          Like I had known you longer than I actually had.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <span class="dot"></span>
+        <h3>☕ Our First Date</h3>
+        <p>
+          I was nervous, excited, and smiling too much.  
+          But with you, it felt easy… like I was exactly where I belonged.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <span class="dot"></span>
+        <h3>✨ The Moment I Realized</h3>
+        <p>
+          One day I just caught myself thinking:  
+          “I really, really love this person.”
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <span class="dot"></span>
+        <h3>💞 Today</h3>
+        <p>
+          Now you’re not just someone I love.  
+          You’re my safe place, my comfort, and my happiest thought.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTOS -->
+  <section>
+    <h2 class="section-title">📸 Our Photos</h2>
+    <p class="section-sub">
+      Add your favorite pictures here (you can replace the images easily).
+    </p>
+
+    <div class="photo-grid">
+      <div class="photo">
+        <img src="https://picsum.photos/500/400?random=1" alt="Photo 1">
+        <div class="caption">One of my favorite moments with you ❤️</div>
+      </div>
+
+      <div class="photo">
+        <img src="https://picsum.photos/500/400?random=2" alt="Photo 2">
+        <div class="caption">The day you made me smile the most 💖</div>
+      </div>
+
+      <div class="photo">
+        <img src="https://picsum.photos/500/400?random=3" alt="Photo 3">
+        <div class="caption">Just us… and the happiest feeling 💕</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMORIES -->
+  <section>
+    <h2 class="section-title">✨ My Favorite Memories</h2>
+    <p class="section-sub">
+      These are the little things that mean everything to me.
+    </p>
+
+    <div class="memory-grid">
+      <div class="memory">🌙 Late night talks that felt like therapy + love</div>
+      <div class="memory">😂 The way you make me laugh without even trying</div>
+      <div class="memory">🤍 When you held my hand and everything felt okay</div>
+      <div class="memory">🎶 The songs that now remind me of you</div>
+      <div class="memory">📍 Our random small plans that became my best days</div>
+      <div class="memory">💌 Your messages that I secretly re-read</div>
+    </div>
+  </section>
+
+  <!-- WHY YOU -->
+  <section>
+    <h2 class="section-title">💖 Why You’re My Person</h2>
+    <p class="section-sub">
+      I don’t just love you… I admire you.
+    </p>
+
+    <div class="card">
+      <ul class="love-list">
+        <li>✨ You make
+
+Nimisha, [07-02-2026 22:25]
+me feel safe, loved, and understood.</li>
+        <li>🌸 You respect me and you love me gently.</li>
+        <li>😂 You turn my bad days into better ones.</li>
+        <li>🤍 You are my comfort and my peace.</li>
+        <li>💞 You are the person I want in every future plan.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- LOVE LETTER -->
+  <section>
+    <h2 class="section-title">💌 A Letter For You</h2>
+    <p class="section-sub">
+      If I could put my heart into words… it would sound like this.
+    </p>
+
+    <div class="card">
+      <p style="font-size:1.05rem; opacity:0.95;">
+        My love,<br><br>
+        I don’t know how you came into my life so beautifully… but I’m grateful every single day that you did.
+        You’re not just someone I love — you’re the person who makes my world softer, safer, and brighter.
+        <br><br>
+        Thank you for choosing me, for staying, for loving me in the ways I never even knew I needed.
+        I promise to love you with patience, loyalty, and a heart that only grows more sure of you.
+        <br><br>
+        I love you. Always. In every universe. ❤️
+      </p>
+    </div>
+  </section>
+
+  <!-- FINAL SURPRISE -->
+  <section class="center">
+    <h2 class="section-title">🎁 One Last Thing</h2>
+    <p class="section-sub">
+      Click the button… I made this part only for you.
+    </p>
+
+    <button class="btn" onclick="showSurprise()">Click for Surprise 💝</button>
+
+    <div class="surprise-box" id="surpriseBox">
+      <div class="big-love">You are my favorite person ❤️</div>
+      <p>
+        I don’t want a perfect love story.  
+        I just want *you* — today, tomorrow, and always.
+      </p>
+      <p style="margin-top:12px; font-weight:600;">
+        Forever yours, <br>
+        <span style="color:var(--pink);">— Your Girl 💖</span>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    Made with ❤️ for the love of my life.
+  </footer>
+
+  <script>
+    function showSurprise(){
+      document.getElementById("surpriseBox").style.display = "block";
+      document.getElementById("surpriseBox").scrollIntoView({behavior:"smooth"});
+    }
+  </script>
+
+</body>
+</html>
+💡 How to add your real photos
+Replace this:
+Copy code
+Html
+<img src="https://picsum.photos/500/400?random=1">
+With your photo file name:
+Copy code
+Html
+<img src="photo1.jpg">
+(Keep all photos in the same folder as index.html)
+If you want, I can also: 💖 add his name everywhere automatically
+💖 make it more “couple aesthetic” (black + gold luxury style)
+💖 add background music with a play button 🎶
